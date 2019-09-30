@@ -13,5 +13,4 @@ public class DepartmentOrg {
 //        this.numberOfEmployees= numberOfEmployees;
 
 
-    }
 }
