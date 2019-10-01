@@ -38,4 +38,8 @@ public class DepartmentOrg {
     public void setNumEmployees(int i) {
         this.numEmployees = numEmployees;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

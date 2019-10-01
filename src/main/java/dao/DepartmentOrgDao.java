@@ -2,7 +2,6 @@ package dao;
 
 import models.DepartmentOrg;
 import models.New;
-
 import java.util.List;
 
 public interface DepartmentOrgDao {

@@ -19,33 +19,32 @@ public class DepartmentOrgTest {
     @Test
     public void getNameReturnsCorrectName() throws Exception {
         DepartmentOrg testDepartmentOrg= setupDepartmentOrg();
-        assertEquals("finance", testDepartmentOrg.getName());
+        assertEquals("managemant", testDepartmentOrg.getName());
     }
 
     @Test
     public void setNameSetsCorrectName() throws Exception {
         DepartmentOrg testDepartmentOrg= setupDepartmentOrg();
-        testDepartmentOrg.setName("finance");
+        testDepartmentOrg.setName("managemant");
         assertNotEquals("accounting", testDepartmentOrg.getName());
     }
-
 
     @Test
     public void getDescriptionReturnsCorrectDescription() throws Exception{
         DepartmentOrg testDepartmentOrg= setupDepartmentOrg();
-        assertEquals("handle finance business", testDepartmentOrg.getDescription());
+        assertEquals(" managemant business", testDepartmentOrg.getDescription());
     }
 
     @Test
     public void setDescriptionSetsCorrectDescription() throws Exception {
         DepartmentOrg testDepartmentOrg= setupDepartmentOrg();
-        testDepartmentOrg.setDescription("handle finance business");
-        assertNotEquals("handle accounting business", testDepartmentOrg.getDescription());
+        testDepartmentOrg.setDescription("managemant");
+        assertNotEquals(" accounting business", testDepartmentOrg.getDescription());
     }
 
     @Test
     public void getNumberOfEmployeesReturnsCorrectNumEmployee() {
-        DepartmentOrg testDepartmentOrg= setupDepartmentOrg();epartment();
+        DepartmentOrg testDepartmentOrg= setupDepartmentOrg();
         assertEquals(12, testDepartmentOrg.getNumEmployees());
     }
 
@@ -54,5 +53,10 @@ public class DepartmentOrgTest {
         DepartmentOrg testDepartmentOrg= setupDepartmentOrg();
         testDepartmentOrg.setNumEmployees(12);
         assertNotEquals(13, testDepartmentOrg.getNumEmployees());
+    }
+
+    //helper
+    public DepartmentOrg setupDepartmentOrg() {
+        return new DepartmentOrg("managemant", "managemant business", 12);
     }
 }
