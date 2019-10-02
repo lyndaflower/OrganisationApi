@@ -5,16 +5,16 @@ import java.util.Date;
 
 public class UserOrg {
     private String name;
-    private  String duties;
+    private  String role;
     private String position;
     private int departmentId;
     private int id;
     private long createdat;
     private String formattedCreatedAt;
 
-    public UserOrg(String name, String duties, String position, int departmentId){
+    public UserOrg(String name, String role, String position, int departmentId){
         this.name = name;
-        this.duties = duties;
+        this.role = role;
         this.position =position;
         this.departmentId = departmentId;
         this.createdat = System.currentTimeMillis();
@@ -29,11 +29,11 @@ public class UserOrg {
     }
 
     public String getRole() {
-        return duties;
+        return role;
     }
 
     public void setRole(String duties) {
-        this.duties = duties;
+        this.role = role;
     }
 
     public String getPosition() {
