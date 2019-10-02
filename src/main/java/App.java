@@ -14,7 +14,7 @@ public class App {
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            return new ModelAndView(model, "new-form.hbs");
+            return new ModelAndView(model, "users-form.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }

@@ -1,5 +1,13 @@
+body{
+background-image: url("images/orgg.jpeg");
+  align-items: center;
+  font-size: 2em;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 #navbar {
-  background-color:#331a00;
+  background-color: #009999;
   color: black;
   position: fixed;
   top: 0;
@@ -123,7 +131,7 @@
 padding-block-end : 100px;
 }
 #users{
-background-color : black;
+background-color : #001a33;
 opacity : 0.9;
 color : white;
 border-radius: 30px;
@@ -163,11 +171,12 @@ width: 500px;
 border:none;
 	padding:15px 20px;
 	border-radius:25px;
-	background: #4d2600;
+	background: #00cccc;
 	width:50%;
 }
 .hr{
-	height:2px;
+	height:3px;
+	float:center;
 	margin:10px 0 10px 0;
 	background:rgba(255,255,255,.2);
 }
