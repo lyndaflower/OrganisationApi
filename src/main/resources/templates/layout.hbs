@@ -1,18 +1,69 @@
+<!--{{#block "header"}}-->
+
+<!--    <!doctype html>-->
+<!--    <html lang="en">-->
+<!--    <head>-->
+<!--        <meta charset="UTF-8">-->
+<!--        <meta name="viewport"-->
+<!--              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">-->
+<!--        <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+<!--        <title>{{#block "title"}}smart-code{{/block}}</title>-->
+<!--        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>-->
+<!--        <link rel="stylesheet" href="css/style.css">-->
+<!--    </head>-->
+<!--    {{#block "content"}}-->
+<!--    {{/block}}-->
+<!--    <div class="page"></div>-->
+
+<!--    </body>-->
+<!--    </html>-->
+<!--{{/block}}-->
 {{#block "header"}}
-
-    <!doctype html>
-    <html lang="en">
+    <!DOCTYPE html>
+    <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport"
-              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>{{#block "title"}}wild-life tracker{{/block}}</title>
-        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+        <title>
+            {{#block "title" }}wildlife-tracker{{/block}}
 
-    <div class="page">     </div>
+        </title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+        <link href="https://fonts.googleapis.com/css?family=Sansita&display=swap" rel="stylesheet">
+
+        <link rel='stylesheet' href='/css/app.css'>
+        {{#block "styles"}}{{/block}}
+
+    </head>
+    <body>
+{{/block}}
+
+<header id="header">
+    <nav id="nav-bar">
+
+        <a class="nav-link" href="/">HOME</a>
+        <a class="nav-link" href="/form">ADD DEPARTMENT</a>
+        <a class="nav-link" href="/form2">ADD NEWS</a>
+        <a class="nav-link" href="/form3">ADD USERS</a>
+
+    </nav>
+
+</header>
+
+<div class="container">
+    <!--begin main template-->
+
+    <div class="col-md-12">
+        {{#block "content"}}
+        {{/block}}
+
+    </div>
+</div>
+{{#block "footer"}}
+    </div>
+    <footer class="footer">
+        <div class="container">
+
+        </div>
+    </footer>
     </body>
     </html>
 {{/block}}

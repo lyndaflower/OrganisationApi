@@ -27,7 +27,6 @@ public class Sql2oDepartmentOrg implements DepartmentOrgDao {
             System.out.println(ex);
         }
     }
-
     @Override
     public void addDepartmentOrgToNews(DepartmentOrg department, New news) {
 
@@ -86,7 +85,6 @@ public class Sql2oDepartmentOrg implements DepartmentOrgDao {
             System.out.println(ex);
         }
     }
-
     @Override
     public void clearAll() {
         String sql = "DELETE from department";
