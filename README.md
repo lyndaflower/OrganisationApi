@@ -1,14 +1,9 @@
 # Organisation-News-Portal
-<img src= "images/home.png">
-<img src= "images/depart.png">
-<img src= "images/user.png">
-<img src= "images/new.png">
-
-#Description
+# Description
 
 Organisation-news-portal is where user can make more details to  department by adding news related to department and also see how many employees are in department
 
-#Author
+# Author
 
 author:lynda flower
 
