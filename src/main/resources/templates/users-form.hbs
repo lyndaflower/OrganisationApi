@@ -6,23 +6,29 @@
         <div class="form" id="users">
             <h2 style="text-align:center;">CREATE USER</h2>
             <div class="hr"></div>
-            <form action="user" method="POST">
+
+            <form action="/userCreate" method="post">
+
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" name="name" class="form-control" placeholder="Enter name" required>
                 </div>
+
                 <div class="form-group">
-                    <label for="duties">Roles</label>
-                    <input type="text" name="duties" class="form-control" placeholder="Enter roles" required>
+                    <label for="role">Role</label>
+                    <input type="text" name="role" class="form-control" placeholder="Enter role" required>
                 </div>
+
                 <div class="form-group">
                     <label for="position">Position</label>
                     <input type="text" name="position" class="form-control" placeholder="Enter Position" required>
                 </div>
+
                 <div class="form-group">
-                    <label for="departmentId">Department Id</label>
-                    <input type="number" name="departmentId" class="form-control" placeholder="Enter Department Id" required>
+                    <label for="departmentId">Department number</label>
+                    <input type="text" name="departmentId" class="form-control" placeholder="Enter Department number" required>
                 </div>
+
                 <div class="form-group">
                     <button type="submit" class="button button-block">Create user</button>
                 </div>

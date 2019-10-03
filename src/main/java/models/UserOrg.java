@@ -1,7 +1,8 @@
 package models;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import org.sql2o.*;
+
+import java.util.List;
 
 public class UserOrg {
     private String name;
@@ -17,9 +18,10 @@ public class UserOrg {
         this.role = role;
         this.position =position;
         this.departmentId = departmentId;
-        this.createdat = System.currentTimeMillis();
-        setFormattedCreatedAt();
+
     }
+
+
     public String getName() {
         return name;
     }
@@ -48,35 +50,44 @@ public class UserOrg {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public int getDepartmentId() {
         return departmentId;
+    }
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setDepartmentId(int departmentId) {
         this.departmentId = departmentId;
     }
-    public long getCreatedat() {
-        return createdat;
-    }
-    public void setCreatedat() {
-        this.createdat = System.currentTimeMillis();
 
+    public void save(){
+        String sql="INSERT INTO users(name,role,position,departmentid) VALUES (:name,:role,:position, :departmentId)";
+        try(Connection con = DB.sql2o.open()){
+            this.id =(int) con.createQuery(sql, true)
+                    .throwOnMappingFailure(false)
+                    .addParameter("name", this.name)
+                    .addParameter("role", this.role)
+                    .addParameter("position", this.position)
+                    .addParameter("departmentId", this.departmentId)
+                    .executeUpdate()
+                    .getKey();
+        }
     }
-    public String getFormattedCreatedAt(){
-        Date date = new Date(createdat);
-        String datePatternToUse = "MM/dd/yyyy @ K:mm a"; //see https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
-        SimpleDateFormat sdf = new SimpleDateFormat(datePatternToUse);
-        return sdf.format(date);
+    public static UserOrg find (int id){
+        try (Connection con = DB.sql2o.open()) {
+            String sql = "SELECT * FROM users where id=:id";
+            UserOrg users = (UserOrg) con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetch(UserOrg.class);
+            return users;
+        }
     }
-    public void setFormattedCreatedAt(){
-        Date date = new Date(this.createdat);
-        String datePatternToUse = "MM/dd/yyyy @ K:mm a";
-        SimpleDateFormat sdf = new SimpleDateFormat(datePatternToUse);
-        this.formattedCreatedAt = sdf.format(date);
+    public static List<UserOrg> all(){
+        String sql = "SELECT * FROM users";
+        try(Connection con = DB.sql2o.open()){
+            return con.createQuery(sql)
+                    .executeAndFetch(UserOrg.class);
+        }
     }
-
 }

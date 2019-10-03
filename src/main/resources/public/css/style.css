@@ -180,3 +180,43 @@ border:none;
 	margin:10px 0 10px 0;
 	background:rgba(255,255,255,.2);
 }
+.success{
+background-color :#2f7575;
+opacity : 0.9;
+color : black;
+font-weight: bold;
+border-radius: 30px;
+ width: 500px;
+ margin: auto;
+
+ padding: 30px;
+ font-size: 20px;
+}
+#newss{
+background-color : #001a33;
+opacity : 0.9;
+color : white;
+border-radius: 30px;
+width: 500px;
+ margin: auto;
+ padding: 30px;
+ font-size: 15px;
+}
+.home{
+font-weight: bold;
+float : right;
+font-size : 4em;
+font-family: 'Roboto Slab', serif;
+color: white;
+font-style: italic;
+padding-left: 300px;
+}
+.home{
+opacity : 0.9;
+color : white;
+float: left;
+border-radius: 30px;
+margin: auto;
+padding: 30px;
+padding-block-start: 300px;
+}

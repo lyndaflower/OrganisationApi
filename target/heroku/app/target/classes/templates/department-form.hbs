@@ -1,0 +1,31 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='css/style.css'>
+{{/partial}}
+{{#partial "content"}}
+
+        <div class="form" id="users">
+        <h2 style="text-align:center;">CREATE DEPARTMENT</h2>
+        <div class="hr"></div>
+
+        <form action="/department" method="post">
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input id="name" type="text" name="name" class="form-control" placeholder="Enter name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <input id="description" type="text" name="description" class="form-control" placeholder="Enter Department Description" required>
+            </div>
+
+            <div class="form-group">
+                <label for="numemployees">Number of employees</label>
+                <input id="numemployees" type="text" name="numemployees" class="form-control" placeholder="Enter Number of Employees in department">
+            </div>
+
+            <input type="submit" class="button button-block" value="Create Department">
+        </form>
+    </div>
+{{/partial}}
+{{> layout.hbs}}

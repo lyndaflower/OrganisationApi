@@ -1,0 +1,25 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='css/style.css'>
+{{/partial}}
+{{#partial "content"}}
+
+
+    {{#if newsOrg}}
+        {{#each newsOrg}}
+            <div class="success">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p> Name:{{author}} </p>
+                        <p>Role:{{news}}</p>
+                        <br>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+        {{/each}}
+    {{/if}}
+
+
+{{/partial}}
+{{> layout.hbs}}

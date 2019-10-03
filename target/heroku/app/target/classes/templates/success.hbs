@@ -1,0 +1,28 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='css/style.css'>
+{{/partial}}
+{{#partial "content"}}
+
+
+    {{#if user}}
+        {{#each user}}
+            <div class="success">
+            <div class="row">
+            <div class="col-md-12">
+                        <p> Name:{{name}} </p>
+                        <p>Role:{{role}}</p>
+                        <p>Position:{{position}}</p>
+                        <p>Department number:{{departmentId}}</p>
+                        <br>
+                        <br>
+            </div>
+            </div>
+            </div>
+            {{else}}
+        {{/each}}
+    {{/if}}
+
+
+
+{{/partial}}
+{{> layout.hbs}}

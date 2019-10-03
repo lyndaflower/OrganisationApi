@@ -1,24 +1,27 @@
 package models;
 
+import org.sql2o.Connection;
+
+import java.util.List;
 import java.util.Objects;
 
 public class New {
-    private String name;
+    private String author;
     private String news;
     private int id;
 
-    public New(String name, String news, int id) {
-        this.name = name;
+    public New(String author, String news) {
+        this.author = author;
         this.id = id;
         this.news = news;
     }
 
-    public String getName() {
-        return name;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAuthor(String name) {
+        this.author = author;
     }
 
     public String getNews() {
@@ -32,22 +35,34 @@ public class New {
     public int getId() {
         return id;
     }
+
+    public void save() {
+        try (Connection con = DB.sql2o.open()) {
+            String sql = "INSERT INTO news (author, news) VALUES (:author, :news)";
+            this.id = (int) con.createQuery(sql, true)
+                    .addParameter("author", this.author)
+                    .addParameter("news", this.news)
+                    .executeUpdate()
+                    .getKey();
+        }
+    }
+    public static List<New> all(){
+        String sql = "SELECT * FROM news";
+        try(Connection con = DB.sql2o.open()){
+            return con.createQuery(sql)
+                    .executeAndFetch(New.class);
+        }
+    }
+
+    public static New find(int id) {
+        try(Connection con = DB.sql2o.open()){
+            String sql = "SELECT * FROM news where id = :id";
+            New neww = con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(New.class);
+            return neww;
+        }
+    }
 }
 
-//    public void setId(int id) {
-//        this.id = id;
-//    }
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) return true;
-//        if (!(o instanceof New)) return false;
-//        New news = (New) o;
-//        return id == news.id &&
-//                Objects.equals(name, news.name);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(name, id);
-//    }
-//}
+
